@@ -1,0 +1,426 @@
+/* ===================================================================
+    COLOR VARIABLES – WindyCamp Dark Premium
+=================================================================== */
+:root {
+    --main-dark: #0A0F18;          /* 전체 배경 - 더 깊은 다크 */
+    --soft-dark: #131A26;          /* 사이드바, 박스 */
+    --soft-dark2: #1A2230;         /* 테이블 내부, 입력창 */
+
+    /* 어두운 퍼플톤 (기존 #9B5DE5 보다 20% 더 어둡게) */
+    --point-color: #7F3CCD;
+    --point-hover: #B17AE8;
+
+    --text-light: #DEE6F1;         /* 기본 텍스트 */
+    --text-soft: #8B97AA;          /* 설명 텍스트 */
+
+    --border-dark: #22303F;        /* 테두리 */
+    --border-light: #334155;
+
+    --header-height: 48px;
+    --sidebar-width: 260px;
+    --radius: 10px;
+}
+
+/* ===================================================================
+    GLOBAL FONT + BODY
+=================================================================== */
+body {
+    background: var(--main-dark);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text-light);
+    margin-top: var(--header-height);
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+/* ===================================================================
+    TOP BLACK SLIDE TEXT BANNER
+=================================================================== */
+.top-scroll-banner {
+    width: 100%;
+    height: var(--header-height);
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.scroll-text {
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scrollLeft 22s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+
+/* ===================================================================
+    LAYOUT (SIDEBAR + MAIN)
+=================================================================== */
+.layout {
+    display: flex;
+}
+
+/* ===================================================================
+    SIDEBAR
+=================================================================== */
+.left-sidebar {
+    width: var(--sidebar-width);
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    background: var(--soft-dark);
+    padding: 25px 20px;
+    border-right: 1px solid var(--border-dark);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.4);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--point-color);
+    text-align: center;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* MENU */
+.side-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    margin-bottom: 9px;
+    border-radius: var(--radius);
+    font-size: 20px;
+    color: var(--text-light) !important;
+    transition: 0.2s;
+}
+
+.side-menu a:hover {
+    background: rgba(127, 60, 205, 0.18);
+    color: var(--point-color) !important;
+    transform: translateX(4px);
+}
+
+.menu-divider {
+    margin: 18px 0;
+    border-top: 1px solid var(--border-dark);
+}
+
+/* DROPDOWN BUTTON */
+.dropdown-btn {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-light);
+    border-radius: var(--radius);
+    transition: 0.2s;
+}
+
+.dropdown-btn:hover {
+    background: rgba(127, 60, 205, 0.18);
+    color: var(--point-hover);
+    transform: translateX(4px);
+}
+
+.caret {
+    margin-left: auto;
+    transition: 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    margin-left: 12px;
+    padding-left: 12px;
+    border-left: 2px solid var(--point-color);
+}
+
+.dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    font-size: 16px;
+    color: var(--text-light) !important;
+    opacity: 0.85;
+}
+
+.dropdown-content a:hover {
+    color: var(--point-hover) !important;
+}
+
+/* ===================================================================
+    LOGIN AREA
+=================================================================== */
+.side-bottom-area {
+    margin-top: auto;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-dark);
+    text-align: center;
+}
+
+.welcome-name {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--point-hover);
+}
+
+/* ===================================================================
+    MAIN CONTENT
+=================================================================== */
+.main {
+    margin-left: var(--sidebar-width);
+    padding: 38px 42px;
+    width: calc(100% - var(--sidebar-width));
+}
+
+/* ===================================================================
+    CAROUSEL
+=================================================================== */
+.main-slider {
+    height: 420px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.55);
+    margin-bottom: 40px;
+}
+
+.main-slider img,
+.main-slider video {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(0.88);
+    transition: 0.3s;
+}
+
+.main-slider img:hover {
+    filter: brightness(1);
+}
+
+/* ===================================================================
+    BEST ITEM GRID
+=================================================================== */
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--point-color);
+    padding-bottom: 7px;
+    margin-bottom: 28px;
+    color: var(--text-light);
+}
+
+.best-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-bottom: 50px;
+}
+
+.best-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+    transition: 0.35s;
+}
+
+.best-grid img:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 32px rgba(0,0,0,0.55);
+}
+
+/* ===================================================================
+    PAGE CONTENT BOX
+=================================================================== */
+.page-content {
+    background: var(--soft-dark);
+    padding: 40px 35px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    min-height: 480px;
+}
+
+/* ===================================================================
+    TABLE
+=================================================================== */
+table {
+    font-size: 10pt;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.mycolor1 {
+    background-color: var(--point-color) !important;
+    color: #000 !important;
+}
+
+.table th {
+    background: #243043;
+    color: #FFFFFF;
+    border-bottom: 2px solid #3A475A;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.table td {
+    background: #1A2230;
+    color: #D0D7E3;
+    padding: 10px;
+    border-bottom: 1px solid #2D3646;
+}
+
+.table-striped > tbody > tr:nth-child(odd) td {
+    background: #161D29;
+}
+
+/* ===================================================================
+    INPUT / SELECT / FORM CONTROL
+=================================================================== */
+.form-control {
+    border-radius: 6px;
+    border: 1px solid #3F4B65;
+    background: #1A1F27;
+    color: #fff;
+}
+
+.form-control:focus {
+    border-color: var(--point-hover);
+    box-shadow: 0 0 0 0.25rem rgba(127,60,205,0.28);
+}
+
+/* ===================================================================
+    PICTURE – 썸네일
+=================================================================== */
+.mythumb_box {
+    background: #243043;
+    border: 1px solid #3F4B65;
+    border-radius: 10px;
+    padding: 22px;
+    margin: 15px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.45);
+}
+
+.mythumb_image {
+    width: 100%;
+    height: 400px !important;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #0F141D;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.mythumb_image:hover {
+    filter: brightness(1.05);
+}
+
+.mythumb_text {
+    background: var(--point-color);
+    color: #000;
+    padding: 8px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: 1px solid #3F4B65;
+}
+
+/* ===================================================================
+    BUTTON STYLE
+=================================================================== */
+.btn {
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+    background: #3A4150;
+    color: #fff;
+    border: none;
+}
+
+.btn:hover {
+    background: var(--point-hover);
+    color: #000;
+}
+
+.btn-login {
+    background: var(--point-color);
+    color: #000;
+    font-weight: 600;
+}
+
+/* ===================================================================
+    LOGIN MODAL
+=================================================================== */
+.login-modal {
+    background: var(--soft-dark);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-dark);
+}
+
+.login-header {
+    background: var(--main-dark);
+    border-bottom: 1px solid var(--border-dark);
+    color: var(--text-light);
+}
+
+.login-body label {
+    font-size: 14px;
+    color: var(--text-soft);
+}
+
+.login-footer {
+    background: var(--main-dark);
+    border-top: 1px solid var(--border-dark);
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.75;
+}
+
+/* ===================================================================
+    IMAGE HOVER EFFECT
+=================================================================== */
+.product-grid img:hover {
+    opacity: 0.88;
+    transition: 0.2s;
+}
+
+/* ===================================================================
+    FIX – 검색 input-group 정렬 문제 해결
+=================================================================== */
+.input-group.input-group-sm {
+    width: 100%;
+}
+
+.input-group.input-group-sm .form-control {
+    flex: 1 1 auto;
+}
+
+/* ===================================================================
+    FIX – “추가 버튼” 여백 문제 해결
+=================================================================== */
+.btn-add {
+    margin-left: 10px;
+}
